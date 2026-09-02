@@ -287,6 +287,54 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   color: var(--plum);
   margin-bottom: 1.2em;
 }
+
+/* « psychologue clinicienne » ne se coupe jamais au milieu */
+.hero h1 em { white-space: nowrap; }
+
+/* Badges de qualification : mini-illustrations en icône */
+.hero-badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0 0 1.4em;
+}
+.hero-badges li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fffdf9;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 18px 6px 7px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--plum-deep);
+}
+.hero-badges img {
+  height: 34px;
+  width: 34px;
+  object-fit: contain;
+  background: var(--plum-tint);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* Surlignage façon marqueur (mots-clés du hero) */
+mark {
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  background-image: linear-gradient(0deg, var(--blush), var(--blush));
+  background-repeat: no-repeat;
+  background-size: 100% 0.5em;
+  background-position: 0 80%;
+  padding: 0 2px;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 
 /* Portrait du hero et images des sections profondes : cadre en arche */
@@ -721,8 +769,13 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   :root { --wave-h: 42px; }
 
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero { padding-block: 56px; }
+  .hero { padding-block: 48px 56px; }
   .hero .ph-portrait { max-width: 420px; }
+
+  /* Typographie allégée sur mobile : titres plus petits, jamais tronqués */
+  h1 { font-size: clamp(1.5rem, 6.8vw, 2.1rem); }
+  .hero p { font-size: 0.98rem; }
+  .eyebrow { font-size: 1.55rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
   .nav-toggle { display: block; }
