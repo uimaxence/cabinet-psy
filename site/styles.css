@@ -252,15 +252,33 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 
 .nav-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 42px;
   background: none;
   border: 1.5px solid var(--line);
-  border-radius: 10px;
-  padding: 8px 12px;
-  font: inherit;
-  font-weight: 700;
-  color: var(--plum-deep);
+  border-radius: 12px;
+  padding: 0;
   cursor: pointer;
 }
+.burger,
+.burger::before,
+.burger::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--plum-deep);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.burger { position: relative; }
+.burger::before { position: absolute; top: -6px; }
+.burger::after { position: absolute; top: 6px; }
+.nav-toggle[aria-expanded="true"] .burger { background: transparent; }
+.nav-toggle[aria-expanded="true"] .burger::before { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .burger::after { transform: translateY(-6px) rotate(-45deg); }
 
 /* ---- Motif anneaux (signature) ---- */
 .rings {
@@ -778,7 +796,11 @@ mark {
   .eyebrow { font-size: 1.55rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
-  .nav-toggle { display: block; }
+  .nav-toggle { display: inline-flex; }
+
+  /* Sous-titre du logo sur deux lignes propres, jamais tronqué */
+  .brand-dot { display: none; }
+  .brand-place { display: block; white-space: nowrap; }
   .nav {
     display: none;
     position: absolute;
