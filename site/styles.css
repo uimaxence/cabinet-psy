@@ -681,6 +681,32 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   pointer-events: none;
 }
 
+/* ---- Mentions légales ---- */
+.legal h2 { font-size: clamp(1.35rem, 2.4vw, 1.7rem); margin-top: 2.2em; }
+.legal h2:first-of-type { margin-top: 0; }
+.legal-date { font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 1.6em; }
+.legal-id {
+  margin: 0 0 1.4em;
+  padding: 10px 26px;
+  background: #fffdf9;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.legal-id > div {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 4px 20px;
+  padding-block: 11px;
+  border-bottom: 1px dashed var(--line);
+}
+.legal-id > div:last-child { border-bottom: none; }
+.legal-id dt { font-weight: 600; color: var(--blue-deep); }
+.legal-id dd { margin: 0; }
+@media (max-width: 600px) {
+  .legal-id { padding-inline: 20px; }
+  .legal-id > div { grid-template-columns: 1fr; gap: 2px; }
+}
+
 /* ---- Note "à valider" (interne, retirer en prod) ---- */
 .todo {
   background: #fff8e6;

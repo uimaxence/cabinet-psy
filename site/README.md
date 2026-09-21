@@ -11,6 +11,7 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 - `programme-mbct-pleine-conscience.html`
 - `approche-systemique.html`
 - `contact.html`
+- `mentions-legales.html` — liée depuis le footer, `noindex` (ADELI, SIRET, RGPD, hébergeur à compléter)
 
 ## Direction artistique (v2.1 — palette bleu canard / kaki, typo sobre)
 - **Couleurs** (bleu foncé « comme les fauteuils du cabinet ») : bleu canard `#265f72` (boutons, prix), bleu profond `#183d4b` (aplats, footer, carte 1), accent `#2a7d8c` (liens, mots accentués des titres), fond ivoire `#f7f3ec`, + accents secondaires vert kaki `#e3e6d2` (cartes, respiration) et sable `#ebdfc8` (bandeau CTA, cartes). Tokens dans `:root` de `styles.css` (`--blue*`, `--khaki*`, `--sand*`).
@@ -24,5 +25,5 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 - **Photos** : placeholders `.ph` avec label « Photo à venir » (portrait sur Accueil et Qui suis-je). 3 photos du cabinet extraites du PDF client sont déjà dans `img/` (basse résolution — à remplacer par les originaux).
 - **Dates de la prochaine session MBCT** (page MBCT).
 - **Réponses FAQ MBCT** : rédigées à titre de proposition (remboursement et participation en cours de dépression validés par la cliente) — encadré jaune `.todo` à retirer une fois le reste validé.
-- **Mentions légales / RGPD** (lien footer inactif).
+- **Mentions légales** : page en place ; renseigner l'hébergeur et confirmer la mention TVA (encadré `.todo` à retirer ensuite).
 - Vérifier si Doctolib ou autre outil de prise de RDV à intégrer au bouton « Prendre rendez-vous ».
