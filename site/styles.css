@@ -345,17 +345,19 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   border-radius: var(--radius-arch);
 }
 
-/* Bandeau bleu en vague : posé en absolu dans l'angle supérieur gauche
-   du portrait du hero, derrière la photo, dont il déborde à gauche et
-   dans le creux de l'arche */
-.portrait { position: relative; }
+/* Bandeau bleu en vague : en absolu dans l'angle supérieur droit du hero
+   (sous le header, jusqu'au bord de l'écran), derrière le portrait qui
+   garde le dessus. Son bord intérieur ondule en diagonale, du bord gauche
+   de la photo vers le bord droit de l'écran. Le SVG vit dans la figure mais
+   se positionne par rapport au hero (la figure n'est pas positionnée en
+   desktop) ; sur mobile il s'ancre à la figure. */
 .portrait .photo { position: relative; z-index: 1; }
 .hero-band {
   position: absolute;
-  top: -48px;
-  left: -48px;
-  width: 78%;
-  height: 52%;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 70%;
   color: var(--blue-deep);
   pointer-events: none;
 }
@@ -841,7 +843,8 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .hero { padding-block: 48px 56px; }
   .hero .ph-portrait, .portrait { max-width: 420px; }
-  .hero-band { top: -24px; left: -16px; }
+  .portrait { position: relative; }
+  .hero-band { top: -28px; right: -24px; width: 86%; height: 64%; }
 
   /* Typographie allégée sur mobile : titres plus petits, jamais tronqués */
   h1 { font-size: clamp(1.5rem, 6.8vw, 2.1rem); }
