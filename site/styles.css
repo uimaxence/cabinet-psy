@@ -238,9 +238,6 @@ a:hover { color: var(--blue-deep); }
 .btn-light { background: #fffdf9; color: var(--blue-deep); }
 .btn-light:hover { background: #fff; color: var(--blue-deep); }
 
-.nav a.btn-primary { color: #fff; background: var(--blue); padding: 9px 18px; margin-left: 8px; }
-.nav a.btn-primary:hover { background: var(--blue-deep); color: #fff; }
-
 .photo {
   width: 100%;
   height: auto;
@@ -339,13 +336,27 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 
-/* Portrait du hero et images des sections profondes : cadre en arche */
+/* Portraits et images des sections profondes : cadre en arche */
 .hero .ph-portrait,
 .hero .photo,
+.photo-arch,
 .section-deep .photo,
 .section-deep .ph {
   border-radius: var(--radius-arch);
 }
+
+/* Bandeau bleu en vague dans l'angle inférieur droit du hero :
+   il passe légèrement sous le portrait, qui reste au-dessus */
+.hero-band {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(50vw, 720px);
+  height: 230px;
+  color: var(--blue-deep);
+  pointer-events: none;
+}
+.hero .hero-grid { position: relative; z-index: 1; }
 
 /* ---- Placeholder photo ---- */
 .ph {
@@ -776,7 +787,9 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .hero { padding-block: 48px 56px; }
-  .hero .ph-portrait { max-width: 420px; }
+  .hero .ph-portrait, .portrait { max-width: 420px; }
+  /* Sur mobile, le bandeau devient un socle pleine largeur sous le portrait */
+  .hero-band { width: 100vw; height: 120px; }
 
   /* Typographie allégée sur mobile : titres plus petits, jamais tronqués */
   h1 { font-size: clamp(1.5rem, 6.8vw, 2.1rem); }
@@ -812,7 +825,6 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
     min-width: 0;
   }
   .has-sub > a::after { content: ""; }
-  .nav .btn-primary { margin-top: 10px; text-align: center; }
 
   .section { padding-block: 56px; }
   .section-deep { padding-block: calc(56px + var(--wave-h)); }
