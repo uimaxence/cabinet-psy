@@ -6,8 +6,8 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 - `index.html` — Accueil
 - `qui-suis-je.html`
 - `therapie-individuelle.html` — « Accompagnement individuel » (vocabulaire cliente ; l'URL est conservée)
-- `therapie-de-couple.html`
-- `therapie-familiale.html`
+- `therapie-de-couple.html` — « Accompagnement de couple » (menu, titre, boutons, tarifs ; le texte courant garde « thérapie conjugale systémique »)
+- `therapie-familiale.html` — « Accompagnement familial » (idem ; le texte courant garde « thérapie familiale systémique »)
 - `programme-mbct-pleine-conscience.html`
 - `approche-systemique.html`
 - `contact.html`
@@ -19,7 +19,7 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 - **Sur-titres** : supprimés partout (demande cliente), sauf le label « Programme de groupe » sur la page MBCT (`.eyebrow`, petites capitales Commissioner).
 - **Illustrations** : 4 dessins au trait (fond transparent) dans `img/illus-*.png` — cartes de l'accueil, badges du hero, en-têtes des 4 pages accompagnements (`.page-hero-illus`, masquée < 1060px) et **bandeau CTA de chaque page avec l'illustration du service concerné** (Contact et bandeau « Prendre rendez-vous » de l'accueil : accompagnement individuel). Originaux dans `assets/`.
 - **Signature** : sections en aplat bleu profond bordées de vagues organiques (SVG en `--wave`), images et portraits en arche (`.photo-arch`), cartes d'accompagnements en teintes variées, motif d'anneaux pointillés.
-- **Hero de l'accueil** : sans photo (demande cliente du 2026-09-30), texte centré (`.hero-center`) sous un **bandeau bleu profond horizontal en vague**, pleine largeur sous le header (`.hero-wave`, même vague `--wave` que les autres sections).
+- **Hero de l'accueil** : sans photo, texte centré (`.hero-center`, titre limité à 14em pour tenir sur trois lignes) entre **deux vagues bleu profond en vis-à-vis**, d'après le croquis de l'utilisateur du 2026-09-30 : `.hero-wave--tr` dans l'angle supérieur droit (sous le header, contre le bord droit) et `.hero-wave--bl` dans l'angle inférieur gauche. Ce sont deux SVG inline en absolu dans `.hero`, dimensionnés en `vw` avec `clamp()` et réduits sous 1200 px et 900 px pour ne jamais toucher le texte ni les boutons (vérifié de 320 à 2560 px).
 - **Photos** : portrait de Raphaëlle sur Qui suis-je = `img/portrait-raphaelle-rose.jpg` (haut à pois, fond rose texturé ; recadré en 4:5, 1000×1250, fond de studio prolongé de 440 px vers le haut pour laisser de l'air autour du visage). Les anciens portraits `portrait-raphaelle.jpg` et `portrait-raphaelle-bleu.jpg` restent dans `img/` mais ne sont plus utilisés. Photos du cabinet en haute définition (salon, espace d'accueil, tableau du pont ; 1600 px de large). Optimisées en JPEG avec Pillow ; les originaux sont hors dépôt dans `photos-originales/` à la racine (gitignoré).
 - **Bloc « Prochaine session » (page MBCT)** : sort du conteneur étroit pour occuper toute la largeur (`.session-block` / `.session-grid`) — grande carte calendrier (mois + pastilles `.day` des dates, journée intensive en pastille sable) et, à droite, Tarifs (kaki) et Inscription (bleu profond, téléphone en grand).
 - **Navigation** : plus de bouton « Prendre rendez-vous » dans la barre du haut (doublon avec Contact, pas de prise de RDV en ligne) ; les appels à l'action restent dans le hero et les bandeaux CTA.
