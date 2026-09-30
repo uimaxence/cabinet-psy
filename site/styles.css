@@ -287,8 +287,32 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 }
 .rings circle { stroke-dasharray: 1 7; stroke-linecap: round; }
 
-/* ---- Hero (accueil) ---- */
-.hero { position: relative; overflow: hidden; padding-block: 88px 80px; }
+/* ---- Hero (accueil) : texte centré sous un bandeau bleu en vague ---- */
+.hero { position: relative; overflow: hidden; padding-block: 0 80px; }
+
+/* Bandeau bleu profond horizontal, pleine largeur sous le header ;
+   son bord inférieur reprend la vague des autres sections */
+.hero-wave {
+  position: relative;
+  height: calc(64px + var(--wave-h));
+  background: var(--blue-deep);
+  margin-bottom: 56px;
+}
+.hero-wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: var(--wave-h);
+  background: var(--wave) center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+.hero-center { max-width: 880px; text-align: center; }
+.hero-center p { max-width: 62ch; margin-inline: auto; }
+.hero-center .hero-badges,
+.hero-center .hero-actions { justify-content: center; }
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -343,23 +367,6 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 .section-deep .photo,
 .section-deep .ph {
   border-radius: var(--radius-arch);
-}
-
-/* Bandeau bleu en vague : en absolu dans l'angle supérieur droit du hero
-   (sous le header, jusqu'au bord de l'écran), derrière le portrait qui
-   garde le dessus. Son bord intérieur ondule en diagonale, du bord gauche
-   de la photo vers le bord droit de l'écran. Le SVG vit dans la figure mais
-   se positionne par rapport au hero (la figure n'est pas positionnée en
-   desktop) ; sur mobile il s'ancre à la figure. */
-.portrait .photo { position: relative; z-index: 1; }
-.hero-band {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 48%;
-  height: 70%;
-  color: var(--blue-deep);
-  pointer-events: none;
 }
 
 /* ---- Placeholder photo ---- */
@@ -475,6 +482,11 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   margin-bottom: 0.45em;
 }
 .card p { font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
+/* Titres sur deux lignes (« Accompagnement de couple ») : on réserve la hauteur
+   pour que les textes des cartes restent alignés entre eux */
+@media (min-width: 901px) {
+  .cards .card h3 { min-height: 2.28em; }
+}
 .card .card-more {
   display: inline-block;
   margin-top: auto;
@@ -773,17 +785,6 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   .schedule > div { grid-template-columns: 1fr; gap: 6px; }
 }
 
-/* ---- Note "à valider" (interne, retirer en prod) ---- */
-.todo {
-  background: #fff8e6;
-  border: 1px dashed #d9b34a;
-  border-radius: 10px;
-  padding: 10px 16px;
-  font-size: 0.88rem;
-  color: #7a611f;
-  margin: 1em 0;
-}
-
 /* ---- Navigation croisée bas de page ---- */
 .next-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
 
@@ -841,10 +842,9 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   :root { --wave-h: 42px; }
 
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero { padding-block: 48px 56px; }
+  .hero { padding-block: 0 56px; }
+  .hero-wave { height: calc(32px + var(--wave-h)); margin-bottom: 36px; }
   .hero .ph-portrait, .portrait { max-width: 420px; }
-  .portrait { position: relative; }
-  .hero-band { top: -28px; right: -24px; width: 86%; height: 64%; }
 
   /* Typographie allégée sur mobile : titres plus petits, jamais tronqués */
   h1 { font-size: clamp(1.5rem, 6.8vw, 2.1rem); }
