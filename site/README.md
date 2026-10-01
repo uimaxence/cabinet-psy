@@ -27,5 +27,5 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 
 ## En attente
 - **Mentions légales** : les encadrés jaunes ont été retirés (demande cliente), mais la section « Hébergement du site » contient encore un texte entre crochets à remplacer par le nom et les coordonnées de l'hébergeur ; mention TVA et SIRET (00027) à confirmer.
-- Session MBCT mars–mai 2027 en ligne (12, 19, 26 mars ; 3, 9, 16, 23 avril ; 14 mai ; journée intensive dimanche 18 avril) : à mettre à jour à chaque nouveau cycle. Le 3 avril 2027 est un samedi alors que les autres dates sont des vendredis — à confirmer avec la cliente.
+- Session MBCT mars–mai 2027 en ligne (12, 19, 26 mars ; 2, 9, 16, 23 avril ; 14 mai ; journée intensive dimanche 18 avril) : à mettre à jour à chaque nouveau cycle.
 - Les styles de placeholder `.ph` restent disponibles dans `styles.css` si une photo doit être temporairement retirée.
