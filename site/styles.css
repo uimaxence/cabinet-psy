@@ -292,8 +292,8 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 
 /* Vague bleu profond dans l'angle supérieur droit (sous le header, contre le
    bord droit de l'écran). Son bord intérieur descend en diagonale avec des
-   ondulations aussi peu prononcées que les vagues horizontales des sections
-   (même rapport amplitude / longueur d'onde que --wave). */
+   ondulations douces, à peine plus marquées que les vagues horizontales
+   des sections (--wave). */
 .hero-wave {
   position: absolute;
   top: 0;
