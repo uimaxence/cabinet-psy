@@ -291,18 +291,24 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 .hero { position: relative; overflow: hidden; padding-block: 96px 88px; }
 
 /* Vague bleu profond dans l'angle supérieur droit (sous le header, contre le
-   bord droit de l'écran). Son bord intérieur descend en diagonale à peine
-   ondulée : version « plus douce, moins prononcée » demandée par la cliente. */
+   bord droit de l'écran). Son bord intérieur descend en diagonale avec de
+   vraies ondulations, mais douces (sinusoïde amortie aux extrémités). */
 .hero-wave {
   position: absolute;
   top: 0;
   right: 0;
   width: 40%;
-  height: 66%;
+  height: 70%;
   color: var(--blue-deep);
   pointer-events: none;
 }
-.hero-text { position: relative; z-index: 1; max-width: min(640px, 54%); }
+/* Bloc texte ferré à gauche, mais décalé vers le centre de la page */
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: min(640px, 54%);
+  margin-left: clamp(0px, 8vw, 128px);
+}
 /* Titre sur trois lignes courtes : il reste à l'écart de la vague */
 .hero-text h1 { max-width: 14em; }
 .hero-text p { max-width: 60ch; }
@@ -838,7 +844,7 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .hero { padding-block: 112px 56px; }
   .hero-wave { width: clamp(128px, 40vw, 340px); height: auto; }
-  .hero-text { max-width: none; }
+  .hero-text { max-width: none; margin-left: 0; }
   .hero .ph-portrait, .portrait { max-width: 420px; }
 
   /* Typographie allégée sur mobile : titres plus petits, jamais tronqués */
