@@ -287,36 +287,25 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
 }
 .rings circle { stroke-dasharray: 1 7; stroke-linecap: round; }
 
-/* ---- Hero (accueil) : texte centré entre deux vagues bleues ---- */
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding-block: clamp(120px, 12vw, 176px) 88px;
-}
+/* ---- Hero (accueil) : texte à gauche, vague douce à droite ---- */
+.hero { position: relative; overflow: hidden; padding-block: 96px 88px; }
 
-/* Deux vagues bleu profond en vis-à-vis (croquis de l'utilisateur) :
-   l'une dans l'angle supérieur droit (sous le header, contre le bord droit),
-   l'autre dans l'angle inférieur gauche. Bords intérieurs ondulés en
-   diagonale, parallèles entre eux ; le texte centré passe au-dessus. */
+/* Vague bleu profond dans l'angle supérieur droit (sous le header, contre le
+   bord droit de l'écran). Son bord intérieur descend en diagonale à peine
+   ondulée : version « plus douce, moins prononcée » demandée par la cliente. */
 .hero-wave {
   position: absolute;
-  display: block;
-  height: auto;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 66%;
   color: var(--blue-deep);
   pointer-events: none;
 }
-.hero-wave--tr { top: 0; right: 0; width: clamp(176px, 37.5vw, 620px); }
-.hero-wave--bl { bottom: -1px; left: 0; width: clamp(104px, 26vw, 430px); }
-@media (max-width: 1200px) {
-  /* entre mobile et grand écran, la vague du bas reste à l'écart du texte */
-  .hero-wave--bl { width: clamp(104px, 20vw, 240px); }
-}
-.hero-center { position: relative; z-index: 1; max-width: 880px; text-align: center; }
-/* Titre toujours sur trois lignes courtes : il reste à l'écart de la vague du haut */
-.hero-center h1 { max-width: 14em; margin-inline: auto; }
-.hero-center p { max-width: 62ch; margin-inline: auto; }
-.hero-center .hero-badges,
-.hero-center .hero-actions { justify-content: center; }
+.hero-text { position: relative; z-index: 1; max-width: min(640px, 54%); }
+/* Titre sur trois lignes courtes : il reste à l'écart de la vague */
+.hero-text h1 { max-width: 14em; }
+.hero-text p { max-width: 60ch; }
 
 .hero-grid {
   display: grid;
@@ -847,9 +836,9 @@ figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 12px; }
   :root { --wave-h: 42px; }
 
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero { padding-block: 104px 112px; }
-  .hero-wave--tr { width: clamp(128px, 40vw, 360px); }
-  .hero-wave--bl { width: clamp(96px, 20vw, 170px); }
+  .hero { padding-block: 112px 56px; }
+  .hero-wave { width: clamp(128px, 40vw, 340px); height: auto; }
+  .hero-text { max-width: none; }
   .hero .ph-portrait, .portrait { max-width: 420px; }
 
   /* Typographie allégée sur mobile : titres plus petits, jamais tronqués */
