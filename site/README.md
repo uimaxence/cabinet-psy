@@ -11,7 +11,7 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 - `programme-mbct-pleine-conscience.html`
 - `approche-systemique.html`
 - `contact.html`
-- `mentions-legales.html` — liée depuis le footer, `noindex` (ADELI, SIRET, RGPD, hébergeur à compléter)
+- `mentions-legales.html` — liée depuis le footer, `noindex` (ADELI, SIRET, RGPD, hébergeur Vercel)
 
 ## Direction artistique (v2.1 — palette bleu canard / kaki, typo sobre)
 - **Couleurs** (bleu foncé « comme les fauteuils du cabinet ») : bleu canard `#265f72` (boutons, prix), bleu profond `#183d4b` (aplats, footer, carte 1), accent `#2a7d8c` (liens, mots accentués des titres), fond ivoire `#f7f3ec`, + accents secondaires vert kaki `#e3e6d2` (cartes, respiration) et sable `#ebdfc8` (bandeau CTA, cartes). Tokens dans `:root` de `styles.css` (`--blue*`, `--khaki*`, `--sand*`).
@@ -32,6 +32,6 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 - **`sitemap.xml`** : les 8 pages indexables (pas les mentions légales, en `noindex`) ; à compléter à chaque nouvelle page, `lastmod` à mettre à jour. **`robots.txt`** : tout autorisé + adresse du sitemap.
 
 ## En attente
-- **Mentions légales** : les encadrés jaunes ont été retirés (demande cliente), mais la section « Hébergement du site » contient encore un texte entre crochets à remplacer par le nom et les coordonnées de l'hébergeur ; mention TVA et SIRET (00027) à confirmer.
+- **Mentions légales** : les encadrés jaunes ont été retirés (demande cliente) et la section « Hébergement du site » est complétée (Vercel Inc., coordonnées reprises des pages légales de vercel.com) ; mention TVA et SIRET (00027) à confirmer.
 - Session MBCT mars–mai 2027 en ligne (12, 19, 26 mars ; 2, 9, 16, 23 avril ; 14 mai ; journée intensive dimanche 18 avril) : à mettre à jour à chaque nouveau cycle.
 - Les styles de placeholder `.ph` restent disponibles dans `styles.css` si une photo doit être temporairement retirée.
