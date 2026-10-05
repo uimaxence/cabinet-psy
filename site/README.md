@@ -25,6 +25,12 @@ Site statique (HTML/CSS/JS vanilla, aucune dépendance). Pour le voir : ouvrir `
 - **Navigation** : plus de bouton « Prendre rendez-vous » dans la barre du haut (doublon avec Contact, pas de prise de RDV en ligne) ; les appels à l'action restent dans le hero et les bandeaux CTA.
 - **Sous-menu « Pourquoi consulter ? »** : pont invisible (`.sub::before`) sur l'écart + délai de fermeture de 250 ms dans `nav.js`, pour pouvoir atteindre les sous-items à la souris.
 
+## Référencement technique
+- **Domaine** : `https://www.raphaellebeaufils.fr/` (Vercel, dossier racine `site/`) ; `raphaellebeaufils.fr` redirige en 308 vers le `www`. Les URL gardent leur `.html`.
+- **Chaque page** : `rel="canonical"` vers sa propre URL en `www` (l'accueil pointe sur `/`, pas sur `/index.html`), balises Open Graph reprenant le `<title>` et la description, `twitter:card`. En cas de modification d'un titre ou d'une description, reporter le changement dans `og:title` / `og:description`.
+- **Image de partage** : `img/partage-cabinet.jpg` (1200×630, recadrée dans `cabinet-salon.jpg`), commune à toutes les pages.
+- **`sitemap.xml`** : les 8 pages indexables (pas les mentions légales, en `noindex`) ; à compléter à chaque nouvelle page, `lastmod` à mettre à jour. **`robots.txt`** : tout autorisé + adresse du sitemap.
+
 ## En attente
 - **Mentions légales** : les encadrés jaunes ont été retirés (demande cliente), mais la section « Hébergement du site » contient encore un texte entre crochets à remplacer par le nom et les coordonnées de l'hébergeur ; mention TVA et SIRET (00027) à confirmer.
 - Session MBCT mars–mai 2027 en ligne (12, 19, 26 mars ; 2, 9, 16, 23 avril ; 14 mai ; journée intensive dimanche 18 avril) : à mettre à jour à chaque nouveau cycle.
